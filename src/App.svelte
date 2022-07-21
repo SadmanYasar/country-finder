@@ -65,7 +65,7 @@
         <Card
           imageSource={filter.flags.png} 
           name={filter.name.official}
-          capital={filter.capital[0]}
+          capital={filter?.capital}
           population={filter.population}
           continent={filter.continents[0]}
           timezone={filter.timezones[0]}
