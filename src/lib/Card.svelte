@@ -1,11 +1,11 @@
-<script>
-  export let imageSource;
-  export let name;
-  export let capital;
-  export let population;
-  export let continent;
-  export let timezone;
-  export let map;
+<script type="ts">
+  export let imageSource : string;
+  export let name : string;
+  export let capital : string;
+  export let population : number;
+  export let continent : string;
+  export let timezone : string;
+  export let map : string;
 </script>
 
 <style>

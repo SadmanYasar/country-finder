@@ -1,4 +1,4 @@
-<script>
+<script type="ts">
   import Cat_Service from "../services/cat.ts";
 </script>
 

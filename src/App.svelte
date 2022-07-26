@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
   import countries_services from "./services/countries.ts";
   import LoadingScreen from "./lib/LoadingScreen.svelte";
   import Card from "./lib/Card.svelte";
 
   let countries = [];
   let filters = [];
-  let searchVal = "";
-  let message = '';
+  let searchVal: string = "";
+  let message: string = '';
 
   const populate = async () => {
     countries = await countries_services.getAllCountries();
