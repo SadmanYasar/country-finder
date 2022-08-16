@@ -1,5 +1,5 @@
 <script type="ts">
-  import Cat_Service from "../services/cat.ts";
+  export let text: string;
 </script>
 
 <style>
@@ -101,11 +101,5 @@
 
 <div class="container">
   <div class="lds-roller"><div></div><div></div><div></div></div>
-  {#await Cat_Service.getCatFact()}
-    <i>Cats have 9 lives</i>
-  {:then text}
-    <i>{text}</i>
-  {:catch error}
-    <!-- Do nothing -->
-  {/await}
+  <i>{text}</i>
 </div>

@@ -1,12 +1,15 @@
 <script lang="ts">
   import countries_services from "./services/countries.ts";
   import LoadingScreen from "./lib/LoadingScreen.svelte";
+  import Cat_Service from "./services/cat.ts";
   import Card from "./lib/Card.svelte";
+  import { onMount } from "svelte"
 
   let countries = [];
   let filters = [];
   let searchVal: string = "";
   let message: string = '';
+  let info: string = 'Cats have nine lives';
 
   const populate = async () => {
     countries = await countries_services.getAllCountries();
@@ -26,6 +29,14 @@
       //do nothing
     }
   }
+
+  onMount(async () => {
+    try {
+      info = await Cat_Service.getCatFact()
+    } catch (error) {
+      info = 'Cats have nine lives'
+    }
+  })
 </script>
 
 <style>
@@ -53,7 +64,7 @@
 
 <main>
     {#await populate()}
-      <LoadingScreen />
+      <LoadingScreen text={info}/>
     {:then results}
       <h1>Search a country</h1>
       <input bind:value={searchVal} />
